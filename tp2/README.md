@@ -13,8 +13,9 @@ docker-compose up -d
 
 L'application sera accessible aux adresses suivantes :
 - **Frontend** : [http://localhost:8080](http://localhost:8080)
-- **API** : [http://localhost:3000](http://localhost:3000)
 - **Adminer** : [http://localhost:8081](http://localhost:8081)
+- **API Messages** : [http://localhost:3000/messages](http://localhost:3000/messages)
+- **API Health** : [http://localhost:3000/health](http://localhost:3000/health)
 
 ## Vérifier la persistance des données
 

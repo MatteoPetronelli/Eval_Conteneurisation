@@ -1,0 +1,35 @@
+services:
+  backend:
+    build:
+      context: ./backend
+    ports:
+      - "3001:3001"
+    env_file:
+      - .env
+    depends_on:
+      - redis
+    networks:
+      - app-network
+
+  frontend:
+    build:
+      context: ./frontend
+    ports:
+      - "8080:80"
+    networks:
+      - app-network
+    depends_on:
+      - backend
+
+  redis:
+    image: redis:7-alpine
+    volumes:
+      - redis-data:/data
+    networks:
+      - app-network
+
+networks:
+  app-network:
+
+volumes:
+  redis-data:
